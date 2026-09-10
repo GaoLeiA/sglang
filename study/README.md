@@ -4,10 +4,11 @@
 
 ## 文档索引
 
-| 文档 | 内容 |
-|---|---|
-| [架构学习指南](sglang_architecture.md) | 请求生命周期、调度、模型执行、缓存和分布式架构 |
-| [Triton 算子指南](sglang_triton_operators.md) | 调用链、Kernel 启动、目录分布和函数索引 |
+| 文档                                                            | 内容                                                         |
+| --------------------------------------------------------------- | ------------------------------------------------------------ |
+| [架构学习指南](sglang_architecture.md)                          | 请求生命周期、调度、模型执行、缓存和分布式架构               |
+| [Triton 算子指南](sglang_triton_operators.md)                   | 调用链、Kernel 启动、目录分布和函数索引                      |
+| [Triton 融合算子清单 (vLLM / Omni / SGLang)](Triton%20fused%20ops.md) | 跨框架 Triton 融合算子（FLA/GDN、Attention、MoE、LoRA 等）全量对照 |
 | [Qwen CUDA／Triton 算子清单](qwen3_6_sglang_custom_tritonop.md) | 对照 vLLM 参考清单，整理 SGLang 相关算子、条件分支和调用位置 |
 
 ## 仓库维护方式
@@ -55,6 +56,20 @@ git push origin study
 ```
 
 日常维护学习分支使用 merge 保留个人提交，不需要把学习分支强制重置到官方 `main`。
+
+后续日常维护与同步命令备忘
+当您在 GitHub 上将官方 sgl-project/sglang 代码同步到您的 fork GaoLeiA/sglang 后，在本地终端执行以下命令即可同步至 study 分支：
+
+```powershell
+# 1. 获取 origin 最新代码并合并到 study 分支
+git fetch origin
+git switch study
+git merge origin/main
+
+# 2. 推送更新后的 study 分支
+git push origin study
+```
+
 
 ## 源码版本说明
 
